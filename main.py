@@ -1,3 +1,7 @@
+import evaluate
+import numpy as np
+from datasets import load_dataset
+from torchvision.transforms import RandomResizedCrop, Compose, Normalize, ToTensor, RandAugment
 from transformers import DefaultDataCollator
 from transformers import TrainingArguments, Trainer, ViTImageProcessor
 
@@ -43,13 +47,13 @@ if __name__ == '__main__':
     data_collator = DefaultDataCollator()
     accuracy = evaluate.load("accuracy")
 
-    model = ViTConfig(
+    config = ViTConfig(
         num_labels=len(labels),
         id2label=id2label,
         label2id=label2id,
     )
 
-    model = OrthogViTForImageClassification(model.config)
+    model = OrthogViTForImageClassification(config)
     # model = ViTForImageClassification(model.config)
 
     training_args = TrainingArguments(
