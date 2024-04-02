@@ -4,7 +4,7 @@ from torch import transpose, bmm
 from torch.nn import AvgPool2d, LayerNorm, Dropout
 
 
-class orthog_model(nn.module):
+class orthog_model(nn.Module):
     def __init__(self, orthog=True, model_name: str = None, model=None, dropout_rate=None, num_labels=1000,
                  feature_reduction=16):
         self.orthog = orthog

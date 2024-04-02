@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cdbe1d3-e776-4a6b-a649-02eceea14cf6" name="Changes" comment="add Jean_Zay script">
+    <list default="true" id="9cdbe1d3-e776-4a6b-a649-02eceea14cf6" name="Changes" comment="add Jean_Zay script + dif vit model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orthog_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/orthog_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,14 +114,31 @@
       <option name="project" value="LOCAL" />
       <updated>1711521393622</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add Jean_Zay script + dif vit model">
+      <option name="closed" value="true" />
+      <created>1712062895632</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712062895632</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add Jean_Zay script + dif vit model">
+      <option name="closed" value="true" />
+      <created>1712062932384</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712062932384</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="init" />
     <MESSAGE value="add Jean_Zay script" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Jean_Zay script" />
+    <MESSAGE value="add Jean_Zay script + dif vit model" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Jean_Zay script + dif vit model" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

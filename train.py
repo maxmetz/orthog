@@ -5,7 +5,8 @@ import contextlib  #
 import os  #
 import random  #
 
-import numpy as np  ####       DON'T MODIFY    ####################        #
+####       DON'T MODIFY    ####################        #
+import numpy as np
 import torch  #
 import torchvision
 import torchvision.transforms as transforms  #
@@ -72,7 +73,7 @@ def train():  #
     torch.cuda.set_device(idr_torch.local_rank)
     gpu = torch.device("cuda")
     model_name = 'vits16'
-    model = orthog_model(model_name)
+    model = orthog_model(model_name, orthog=False)
     model = model.to(gpu)
 
     # **************************************************************************************************************
