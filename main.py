@@ -88,7 +88,7 @@ if __name__ == '__main__':
     )
 
     print("le training est lancé")
-    trainer.train()
+    trainer.train("/home/metz/Documents/hugging_repo/my_awesome_orthog_imagenet1k_model/checkpoint-36112")
 
     # train_dataloader = trainer.get_train_dataloader()
 
