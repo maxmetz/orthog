@@ -52,6 +52,8 @@ def train():  #
     parser.add_argument('--non-blocking', default=True, action=argparse.BooleanOptionalAction,  #
                         help='activate asynchronuous GPU transfer')  #
     parser.add_argument('--prefetch-factor', default=3, type=int,  #
+                        help='model name')
+    parser.add_argument('--model-name', default="vits16", type=str,  #
                         help='prefectch factor in dataloader')  #
     parser.add_argument('--drop-last', default=False, action=argparse.BooleanOptionalAction,  #
                         help='activate drop_last option in dataloader')  #
@@ -72,12 +74,12 @@ def train():  #
     # define model
     torch.cuda.set_device(idr_torch.local_rank)
     gpu = torch.device("cuda")
-    model_name = 'vits16'
-    model = orthog_model(model_name, orthog=False)
+
+    model = orthog_model(orthog=True, model_name=args.model_name)
     model = model.to(gpu)
 
     # **************************************************************************************************************
-    if idr_torch.rank == 0: print(f'model: {model_name}')  #
+    if idr_torch.rank == 0: print(f'model: {args.model_name}')  #
     if idr_torch.rank == 0: print('number of parameters: {}'.format(sum([p.numel()  ### DON'T MODIFY ####      #
                                                                          for p in model.parameters()])))  #
     # *************************************************************************************************************#
@@ -197,7 +199,7 @@ def train():  #
     ### Weight and biases initialization                                                                      #
     if not args.test and idr_torch.rank == 0:  #
         config = dict(  #
-            architecture=model_name,  #
+            architecture=args.model_name,  #
             batch_size=args.batch_size,  #
             epochs=args.epochs,  #
             image_size=args.image_size,  #
@@ -250,7 +252,7 @@ def train():  #
 
                 optimizer.zero_grad()
                 # Runs the forward pass
-                outputs = model(images)
+                outputs = model(images)[:, 0]
                 loss = criterion(outputs, labels)
 
                 # **************************************************************************************************************
@@ -371,3 +373,4 @@ if __name__ == '__main__':
     if idr_torch.rank == 0:
         print(">>> Training on ", len(idr_torch.hostnames), " nodes and ", idr_torch.size, " processes")
     train()
+
